@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NextGen-Nordic — We work out what's actually wrong</title>
+<meta name="description" content="Two people in Copenhagen who untangle digital, administrative and creative problems. We tell you plainly what is wrong and what to do next.">
+<meta property="og:title" content="NextGen-Nordic — We work out what's actually wrong">
+<meta property="og:description" content="Stuck on something digital, administrative or creative? We find out what is actually wrong and tell you what to do next.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F1F2EE;
+  --paper-2:#E7E9E3;
+  --ink:#16191B;
+  --slate:#5B6560;
+  --teal:#0E6A5E;
+  --teal-dark:#0A544A;
+  --wash:#D9E7E2;
+  --rule:#CDD2C9;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --wrap:1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:18px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+body:not(.da) .da{display:none}
+body.da .en{display:none}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+section{padding:88px 0;border-top:1px solid var(--rule)}
+section:first-of-type{border-top:none}
+
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-0.02em;line-height:1.08;margin:0}
+h1{font-size:clamp(2.3rem,5.6vw,4.1rem)}
+h2{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:14px}
+h3{font-size:1.18rem;letter-spacing:-0.01em;line-height:1.25}
+p{margin:0 0 18px}
+a{color:var(--teal-dark)}
+
+.eyebrow{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--slate);margin-bottom:18px;display:block;
+}
+.lead{font-size:1.22rem;color:var(--slate);max-width:60ch}
+.section-intro{max-width:62ch;margin-bottom:40px}
+
+/* header */
+.topbar{
+  position:sticky;top:0;z-index:20;background:rgba(241,242,238,.92);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+.mark{font-family:var(--display);font-weight:700;font-size:1.06rem;letter-spacing:-0.02em;text-decoration:none;color:var(--ink)}
+.mark span{color:var(--teal)}
+.topbar-right{display:flex;align-items:center;gap:14px}
+.langswitch{display:flex;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:#fff}
+.langswitch button{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;padding:7px 13px;
+  border:0;background:transparent;color:var(--slate);cursor:pointer;
+}
+.langswitch button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+.btn{
+  display:inline-block;font-family:var(--display);font-weight:700;font-size:.95rem;
+  background:var(--teal);color:#fff;text-decoration:none;padding:13px 22px;border-radius:3px;
+  border:1px solid var(--teal);cursor:pointer;transition:background .15s ease;
+}
+.btn:hover{background:var(--teal-dark)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn.small{padding:9px 15px;font-size:.85rem}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--teal);outline-offset:3px;
+}
+
+/* hero */
+.hero{padding:76px 0 84px}
+.hero h1{max-width:16ch}
+.hero .lead{margin-top:26px}
+.hero-cta{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
+
+/* signature: the transformation */
+.transform{
+  margin-top:64px;display:grid;grid-template-columns:1fr auto 1fr;
+  gap:0;align-items:stretch;border:1px solid var(--rule);background:#fff;
+}
+.tcol{padding:28px}
+.tcol + .tcol{border-left:1px solid var(--rule)}
+.tcol.after{background:var(--wash);border-left:1px solid var(--rule)}
+.tlabel{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:16px}
+.tquote{font-size:1.02rem;color:var(--slate);font-style:italic}
+.tarrow{
+  display:flex;align-items:center;justify-content:center;width:56px;
+  font-family:var(--mono);color:var(--teal);font-size:1.1rem;background:#fff;
+  border-left:1px solid var(--rule);
+}
+.tfield{margin-bottom:14px}
+.tfield:last-child{margin-bottom:0}
+.tfield b{
+  display:block;font-family:var(--mono);font-weight:500;font-size:.68rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:3px;
+}
+.tfield span{font-size:.98rem}
+.tnote{margin-top:18px;font-size:.95rem;color:var(--slate);max-width:62ch}
+
+/* grids */
+.grid{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.grid.four{grid-template-columns:repeat(4,1fr)}
+.grid.three{grid-template-columns:repeat(3,1fr)}
+.cell{background:var(--paper);padding:26px}
+.cell p{font-size:.98rem;color:var(--slate);margin:10px 0 0}
+.cell .tools{font-family:var(--mono);font-size:.76rem;color:var(--slate);margin-top:14px;line-height:1.7}
+
+/* steps */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.step{border-top:2px solid var(--ink);padding-top:16px}
+.step .num{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--teal-dark);display:block;margin-bottom:12px}
+.step p{font-size:.98rem;color:var(--slate);margin:10px 0 0}
+
+/* offer */
+.offer{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
+.pricebox{border:1px solid var(--ink);background:#fff;padding:30px}
+.price{font-family:var(--display);font-weight:700;font-size:2.6rem;letter-spacing:-0.03em;line-height:1}
+.price small{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-top:10px;font-weight:400}
+.checklist{list-style:none;margin:24px 0 0;padding:0}
+.checklist li{position:relative;padding-left:26px;margin-bottom:11px;font-size:.98rem}
+.checklist li::before{content:"—";position:absolute;left:0;color:var(--teal);font-family:var(--mono)}
+.terms{margin-top:22px;padding-top:18px;border-top:1px solid var(--rule);font-size:.9rem;color:var(--slate)}
+
+/* cases */
+.case{border-top:1px solid var(--rule);padding:28px 0;display:grid;grid-template-columns:200px 1fr;gap:32px}
+.case:first-of-type{border-top:none;padding-top:0}
+.case .who{font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;color:var(--slate);line-height:1.7}
+.case dl{margin:0}
+.case dt{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:4px}
+.case dd{margin:0 0 16px;font-size:.99rem}
+.case dd:last-child{margin-bottom:0}
+
+/* honest */
+.honest{background:var(--paper-2)}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.plainlist{list-style:none;margin:0;padding:0}
+.plainlist li{padding:11px 0;border-bottom:1px solid var(--rule);font-size:.99rem}
+
+/* form */
+.form{max-width:660px}
+.field{margin-bottom:22px}
+.field label{display:block;font-family:var(--display);font-weight:700;font-size:1rem;margin-bottom:7px}
+.field .hint{font-size:.9rem;color:var(--slate);margin-bottom:9px}
+.field input,.field textarea{
+  width:100%;font-family:var(--body);font-size:1rem;padding:12px 14px;
+  border:1px solid var(--rule);background:#fff;color:var(--ink);border-radius:2px;
+}
+.field textarea{min-height:88px;resize:vertical}
+.formnote{font-size:.9rem;color:var(--slate);margin-top:16px}
+
+footer{border-top:1px solid var(--rule);padding:44px 0 60px;font-size:.9rem;color:var(--slate)}
+.footgrid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap}
+footer a{color:var(--slate)}
+
+@media (max-width:900px){
+  .grid.four{grid-template-columns:1fr 1fr}
+  .offer,.twocol{grid-template-columns:1fr;gap:36px}
+  .steps{grid-template-columns:1fr;gap:26px}
+  .case{grid-template-columns:1fr;gap:12px}
+}
+@media (max-width:680px){
+  body{font-size:17px}
+  section{padding:60px 0}
+  .grid.four,.grid.three{grid-template-columns:1fr}
+  .transform{grid-template-columns:1fr}
+  .tcol + .tcol{border-left:none;border-top:1px solid var(--rule)}
+  .tcol.after{border-left:none}
+  .tarrow{width:auto;height:42px;border-left:none;border-top:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="#top">NextGen<span>-</span>Nordic</a>
+    <div class="topbar-right">
+      <div class="langswitch" role="group" aria-label="Language">
+        <button id="btn-en" aria-pressed="true" onclick="setLang('en')">EN</button>
+        <button id="btn-da" aria-pressed="false" onclick="setLang('da')">DA</button>
+      </div>
+      <a class="btn small" href="#tell-us"><span class="en">Describe your problem</span><span class="da">Beskriv dit problem</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <h1>
+      <span class="en">Something is stuck. We work out what's actually wrong.</span>
+      <span class="da">Noget sidder fast. Vi finder ud af, hvad der reelt er galt.</span>
+    </h1>
+    <p class="lead">
+      <span class="en">Two people in Copenhagen who untangle digital, administrative and creative problems — and tell you in plain language what to do next. We use AI where it helps. It is never the point.</span>
+      <span class="da">To personer i København, der løser digitale, administrative og kreative problemer — og fortæller dig i klart sprog, hvad næste skridt er. Vi bruger AI, hvor det hjælper. Det er aldrig pointen.</span>
+    </p>
+    <div class="hero-cta">
+      <a class="btn" href="#tell-us"><span class="en">Describe your problem</span><span class="da">Beskriv dit problem</span></a>
+      <a class="btn ghost" href="#work"><span class="en">See what we've done</span><span class="da">Se hvad vi har lavet</span></a>
+    </div>
+
+    <!-- SIGNATURE ELEMENT -->
+    <div class="transform">
+      <div class="tcol">
+        <div class="tlabel"><span class="en">What people usually write</span><span class="da">Sådan bliver det oftest skrevet</span></div>
+        <p class="tquote">
+          <span class="en">“Hi. My music won't show up on the streaming services. I've tried everything. Can you help?”</span>
+          <span class="da">“Hej. Min musik dukker ikke op på streamingtjenesterne. Jeg har prøvet alt. Kan I hjælpe?”</span>
+        </p>
+      </div>
+      <div class="tarrow" aria-hidden="true">→</div>
+      <div class="tcol after">
+        <div class="tlabel"><span class="en">What we turn it into</span><span class="da">Det, vi laver det om til</span></div>
+        <div class="tfield">
+          <b><span class="en">Goal</span><span class="da">Mål</span></b>
+          <span class="en">Get 12 tracks onto Spotify and Apple Music under my own artist name.</span>
+          <span class="da">Få 12 numre på Spotify og Apple Music under mit eget kunstnernavn.</span>
+        </div>
+        <div class="tfield">
+          <b><span class="en">What happens instead</span><span class="da">Hvad der sker i stedet</span></b>
+          <span class="en">The distributor rejects the upload. The error mentions missing rights documentation.</span>
+          <span class="da">Distributøren afviser uploadet. Fejlen nævner manglende rettighedsdokumentation.</span>
+        </div>
+        <div class="tfield">
+          <b><span class="en">Already tried</span><span class="da">Allerede prøvet</span></b>
+          <span class="en">Re-uploaded twice, changed the file format, wrote to support — no reply in nine days.</span>
+          <span class="da">Uploadet igen to gange, skiftet filformat, skrevet til support — intet svar i ni dage.</span>
+        </div>
+      </div>
+    </div>
+    <p class="tnote">
+      <span class="en">The second version is the thing that gets problems solved. It is also what we deliver: you can act on it yourself, or hand it to anyone who can.</span>
+      <span class="da">Version to er den, der får problemer løst. Det er også den, vi leverer: du kan handle på den selv — eller give den videre til en, der kan.</span>
+    </p>
+  </div>
+</section>
+
+<!-- LANES -->
+<section id="help">
+  <div class="wrap">
+    <div class="section-intro">
+      <span class="eyebrow"><span class="en">What we help with</span><span class="da">Det hjælper vi med</span></span>
+      <h2><span class="en">Four kinds of stuck</span><span class="da">Fire slags fastlåste situationer</span></h2>
+      <p class="lead"><span class="en">If your problem doesn't fit neatly into one of these, describe it anyway. Half of what we do sits between two systems that each blame the other.</span><span class="da">Passer dit problem ikke ind i en af dem, så beskriv det alligevel. Halvdelen af det, vi laver, ligger mellem to systemer, der peger på hinanden.</span></p>
+    </div>
+    <div class="grid four">
+      <div class="cell">
+        <h3><span class="en">Stuck on a platform</span><span class="da">Fast i en platform</span></h3>
+        <p><span class="en">The tool won't do the thing, support is slow, and the guides assume you already know.</span><span class="da">Værktøjet vil ikke, supporten er langsom, og vejledningerne forudsætter, at du allerede ved det.</span></p>
+        <div class="tools">Canva · InVideo · Zoom · LinkedIn · Meta Business Suite · Meetup · Dinero · Lunar · virk.dk</div>
+      </div>
+      <div class="cell">
+        <h3><span class="en">Paperwork with a deadline</span><span class="da">Papirarbejde med en frist</span></h3>
+        <p><span class="en">A letter you have to answer. Documentation you have to gather. Wording you have to get right.</span><span class="da">Et brev, du skal svare på. Dokumentation, du skal samle. En formulering, der skal være rigtig.</span></p>
+        <div class="tools"><span class="en">Authorities · insurance · forms · evidence · letters</span><span class="da">Myndigheder · forsikring · blanketter · dokumentation · breve</span></div>
+      </div>
+      <div class="cell">
+        <h3><span class="en">A mess of information</span><span class="da">Et rod af information</span></h3>
+        <p><span class="en">Screenshots, statements, recordings, a thread with 400 messages. Somewhere in there is the answer.</span><span class="da">Skærmbilleder, kontoudtog, optagelser, en tråd med 400 beskeder. Svaret ligger derinde et sted.</span></p>
+        <div class="tools"><span class="en">Transcripts · statements · documents · long threads</span><span class="da">Transskriptioner · kontoudtog · dokumenter · lange tråde</span></div>
+      </div>
+      <div class="cell">
+        <h3><span class="en">Music and creative work</span><span class="da">Musik og kreativt arbejde</span></h3>
+        <p><span class="en">The chain from making something to actually publishing it, and the point where it breaks.</span><span class="da">Kæden fra at lave noget til rent faktisk at udgive det — og det sted, hvor den knækker.</span></p>
+        <div class="tools">Suno · Spotify · TIDAL · Soundiiz · Apple Music · Denon DJ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-intro">
+      <span class="eyebrow"><span class="en">How it works</span><span class="da">Sådan foregår det</span></span>
+      <h2><span class="en">Three steps, and you decide after the second</span><span class="da">Tre trin — og du bestemmer efter det andet</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">01</span>
+        <h3><span class="en">You describe it badly</span><span class="da">Du beskriver det dårligt</span></h3>
+        <p><span class="en">That is fine, and expected. Answer three questions as well as you can. Nobody describes their own problem accurately — that is the whole reason this is hard.</span><span class="da">Det er helt fint og helt forventet. Svar på tre spørgsmål, så godt du kan. Ingen beskriver deres eget problem præcist — det er netop derfor, det er svært.</span></p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3><span class="en">We find out what's actually wrong</span><span class="da">Vi finder ud af, hvad der reelt er galt</span></h3>
+        <p><span class="en">We spend a fixed two hours on it. We test, read, check and rule things out. Then you get a written Problem Report.</span><span class="da">Vi bruger to faste timer på det. Vi tester, læser, tjekker og udelukker. Derefter får du en skriftlig problemrapport.</span></p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3><span class="en">You choose what happens next</span><span class="da">Du vælger, hvad der skal ske</span></h3>
+        <p><span class="en">Do it yourself with the report in hand, hand it to someone else, or ask us to fix it. No pressure either way.</span><span class="da">Gør det selv med rapporten i hånden, giv den videre til en anden, eller bed os om at løse det. Ingen pres nogen af vejene.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section id="offer">
+  <div class="wrap">
+    <div class="offer">
+      <div>
+        <span class="eyebrow"><span class="en">The starting point</span><span class="da">Udgangspunktet</span></span>
+        <h2><span class="en">The Problem Report</span><span class="da">Problemrapporten</span></h2>
+        <p><span class="en">Most people don't need someone to take over. They need someone to tell them, honestly and in plain words, what is actually wrong and what the sensible next move is.</span><span class="da">De fleste har ikke brug for, at nogen overtager. De har brug for, at nogen ærligt og i klart sprog fortæller dem, hvad der reelt er galt, og hvad det fornuftige næste skridt er.</span></p>
+        <p><span class="en">That is what this is. One problem, two hours of our attention, and a written answer you can use with or without us.</span><span class="da">Det er det, den er. Ét problem, to timers opmærksomhed fra os, og et skriftligt svar, du kan bruge med eller uden os.</span></p>
+      </div>
+      <div class="pricebox">
+        <div class="price">1.200 kr
+          <small><span class="en">One problem · delivered in 3 working days</span><span class="da">Ét problem · leveret på 3 hverdage</span></small>
+        </div>
+        <ul class="checklist">
+          <li><span class="en">What is actually wrong — separated from what you thought was wrong</span><span class="da">Hvad der reelt er galt — adskilt fra det, du troede var galt</span></li>
+          <li><span class="en">What we ruled out along the way</span><span class="da">Hvad vi undervejs har udelukket</span></li>
+          <li><span class="en">The single first action we recommend</span><span class="da">Den ene første handling, vi anbefaler</span></li>
+          <li><span class="en">What that will realistically take, in time or money</span><span class="da">Hvad det realistisk kræver i tid eller penge</span></li>
+          <li><span class="en">Who should do it — you, us, or a specific kind of specialist</span><span class="da">Hvem der bør gøre det — dig, os eller en bestemt slags specialist</span></li>
+          <li><span class="en">A written brief you can send to any provider, including one that isn't us</span><span class="da">En færdig beskrivelse, du kan sende til enhver leverandør — også en, der ikke er os</span></li>
+        </ul>
+        <p class="terms"><span class="en">If you then ask us to fix the problem, the full 1.200 kr is deducted from that price. If we don't think we're the right people, we'll say so and tell you who is.</span><span class="da">Beder du os bagefter om at løse problemet, trækkes hele beløbet fra prisen. Er vi ikke de rette, siger vi det — og fortæller, hvem der er.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="section-intro">
+      <span class="eyebrow"><span class="en">Work we've done</span><span class="da">Opgaver vi har løst</span></span>
+      <h2><span class="en">Real jobs, paid, anonymised</span><span class="da">Rigtige, betalte opgaver — anonymiseret</span></h2>
+      <p class="lead"><span class="en">Our customers asked not to be named, which we take seriously. The problems are described exactly as they were.</span><span class="da">Vores kunder har bedt om ikke at blive nævnt ved navn, og det respekterer vi. Problemerne er beskrevet præcis som de var.</span></p>
+    </div>
+
+    <div class="case">
+      <div class="who"><span class="en">DJ · Denmark<br>Paid job</span><span class="da">DJ · Danmark<br>Betalt opgave</span></div>
+      <dl>
+        <dt><span class="en">Problem</span><span class="da">Problem</span></dt>
+        <dd><span class="en">A Denon DJ Prime setup would not play the music. The library lived in Spotify, and the hardware would not accept it. Neither company's support desk considered it their problem.</span><span class="da">Et Denon DJ Prime-setup ville ikke afspille musikken. Biblioteket lå i Spotify, og hardwaren ville ikke tage imod det. Ingen af de to supportafdelinger mente, det var deres problem.</span></dd>
+        <dt><span class="en">What we did</span><span class="da">Hvad vi gjorde</span></dt>
+        <dd><span class="en">Established which streaming services the hardware actually supports, moved the library through Soundiiz into TIDAL, rebuilt the playlist structure, and tested the whole chain before the next booking.</span><span class="da">Fastslog hvilke streamingtjenester hardwaren reelt understøtter, flyttede biblioteket via Soundiiz til TIDAL, genopbyggede playlistestrukturen og testede hele kæden inden næste booking.</span></dd>
+        <dt><span class="en">Outcome</span><span class="da">Resultat</span></dt>
+        <dd><span class="en">Working setup, and a written procedure for adding new music without repeating the migration.</span><span class="da">Et setup der virker — og en skriftlig procedure til at tilføje ny musik uden at gentage migreringen.</span></dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <div class="who"><span class="en">Musician · Denmark<br>Paid job</span><span class="da">Musiker · Danmark<br>Betalt opgave</span></div>
+      <dl>
+        <dt><span class="en">Problem</span><span class="da">Problem</span></dt>
+        <dd><span class="en">Tracks made with Suno needed to reach Spotify and Apple Music properly — with the right rights documentation, artist name and metadata.</span><span class="da">Numre lavet med Suno skulle på Spotify og Apple Music på ordentlig vis — med korrekt rettighedsdokumentation, kunstnernavn og metadata.</span></dd>
+        <dt><span class="en">What we did</span><span class="da">Hvad vi gjorde</span></dt>
+        <dd><span class="en">Worked out what the distributors actually require, prepared the documentation, corrected the metadata, and ran the release through end to end.</span><span class="da">Fandt ud af, hvad distributørerne reelt kræver, forberedte dokumentationen, rettede metadata og kørte udgivelsen igennem fra ende til anden.</span></dd>
+        <dt><span class="en">Outcome</span><span class="da">Resultat</span></dt>
+        <dd><span class="en">Published catalogue, and a repeatable release checklist the artist now uses alone.</span><span class="da">Udgivet katalog — og en gentagelig udgivelses-tjekliste, som kunstneren nu bruger selv.</span></dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <div class="who"><span class="en">Private individual · Denmark<br>Paid job</span><span class="da">Privatperson · Danmark<br>Betalt opgave</span></div>
+      <dl>
+        <dt><span class="en">Problem</span><span class="da">Problem</span></dt>
+        <dd><span class="en">A case with a public authority required documentation by a deadline. It was unclear what counted as documentation, or how the answer should be worded.</span><span class="da">En sag hos en offentlig myndighed krævede dokumentation inden en frist. Det var uklart, hvad der tæller som dokumentation, og hvordan svaret skulle formuleres.</span></dd>
+        <dt><span class="en">What we did</span><span class="da">Hvad vi gjorde</span></dt>
+        <dd><span class="en">Read the correspondence, listed exactly what was being asked for, helped gather and organise the material, and drafted a clear, factual reply.</span><span class="da">Læste korrespondancen, opstillede præcis hvad der blev bedt om, hjalp med at samle og strukturere materialet og skrev et klart, sagligt svar.</span></dd>
+        <dt><span class="en">Outcome</span><span class="da">Resultat</span></dt>
+        <dd><span class="en">Submitted on time and complete. We did not give legal advice, and said clearly where that line was.</span><span class="da">Indsendt til tiden og fuldstændigt. Vi gav ikke juridisk rådgivning og sagde tydeligt, hvor den grænse gik.</span></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- HONEST -->
+<section class="honest" id="about">
+  <div class="wrap">
+    <div class="twocol">
+      <div>
+        <span class="eyebrow"><span class="en">Who we are</span><span class="da">Hvem vi er</span></span>
+        <h2><span class="en">Two people, and no pretending</span><span class="da">To personer — og ingen pynt</span></h2>
+        <p><span class="en">NextGen-Nordic is [NAME 1] and [NAME 2], based in Copenhagen. We are a registered Danish company, CVR 46561740. We are also new at this, and we would rather tell you that than have you find out.</span><span class="da">NextGen-Nordic er [NAVN 1] og [NAVN 2] med base i København. Vi er et registreret dansk selskab, CVR 46561740. Vi er også nye i det her, og det siger vi hellere selv, end at du opdager det.</span></p>
+        <p><span class="en">We are not a large consultancy, we do not have a network of experts, and we are not an AI company. We are two people who are good at working out what is actually going on, and stubborn about finishing.</span><span class="da">Vi er ikke et stort konsulenthus, vi har ikke et netværk af eksperter, og vi er ikke et AI-firma. Vi er to personer, der er gode til at finde ud af, hvad der faktisk foregår — og stædige nok til at blive færdige.</span></p>
+        <p><span class="en">Considering something substantial? We can put you in touch with someone we've helped before, privately and with their permission.</span><span class="da">Overvejer du noget større? Vi kan sætte dig i kontakt med en, vi har hjulpet før — privat og med vedkommendes tilladelse.</span></p>
+      </div>
+      <div>
+        <span class="eyebrow"><span class="en">What we don't do</span><span class="da">Det gør vi ikke</span></span>
+        <h2><span class="en">The limits, up front</span><span class="da">Grænserne, sagt på forhånd</span></h2>
+        <ul class="plainlist">
+          <li><span class="en">We don't give legal, tax or financial advice. When you need a lawyer or an accountant, we say so.</span><span class="da">Vi giver ikke juridisk, skattemæssig eller økonomisk rådgivning. Har du brug for en advokat eller revisor, siger vi det.</span></li>
+          <li><span class="en">We don't ask for your bank logins or NemID/MitID, ever.</span><span class="da">Vi beder aldrig om dine bankoplysninger eller MitID.</span></li>
+          <li><span class="en">We don't take on work we don't believe we can finish. We'd rather turn it down.</span><span class="da">Vi tager ikke opgaver, vi ikke tror, vi kan gøre færdige. Så siger vi hellere nej.</span></li>
+          <li><span class="en">We don't keep your documents longer than the job needs. Ask, and we delete them.</span><span class="da">Vi gemmer ikke dine dokumenter længere, end opgaven kræver. Sig til, og vi sletter dem.</span></li>
+          <li><span class="en">We use AI as a tool in our work. It does not decide anything on its own, and we check what it produces.</span><span class="da">Vi bruger AI som værktøj i arbejdet. Den beslutter ikke noget selv, og vi kontrollerer det, den producerer.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section id="tell-us">
+  <div class="wrap">
+    <div class="section-intro">
+      <span class="eyebrow"><span class="en">Tell us your problem</span><span class="da">Fortæl os dit problem</span></span>
+      <h2><span class="en">Three questions. Rough answers are fine.</span><span class="da">Tre spørgsmål. Grove svar er fint.</span></h2>
+      <p class="lead"><span class="en">You don't need the right words. That's our job. We reply within one working day and tell you honestly whether we can help.</span><span class="da">Du behøver ikke de rigtige ord. Det er vores job. Vi svarer inden for én hverdag og siger ærligt, om vi kan hjælpe.</span></p>
+    </div>
+    <div class="form">
+      <div class="field">
+        <label for="q1"><span class="en">1. What are you trying to achieve?</span><span class="da">1. Hvad prøver du at opnå?</span></label>
+        <div class="hint"><span class="en">The thing you actually want to end up with.</span><span class="da">Det, du reelt gerne vil ende med.</span></div>
+        <textarea id="q1"></textarea>
+      </div>
+      <div class="field">
+        <label for="q2"><span class="en">2. What happens instead?</span><span class="da">2. Hvad sker der i stedet?</span></label>
+        <div class="hint"><span class="en">Error messages, refusals, silence — whatever you see.</span><span class="da">Fejlbeskeder, afvisninger, tavshed — hvad du end oplever.</span></div>
+        <textarea id="q2"></textarea>
+      </div>
+      <div class="field">
+        <label for="q3"><span class="en">3. What have you already tried?</span><span class="da">3. Hvad har du allerede prøvet?</span></label>
+        <div class="hint"><span class="en">So we don't send you round the same loop again.</span><span class="da">Så vi ikke sender dig gennem den samme runde igen.</span></div>
+        <textarea id="q3"></textarea>
+      </div>
+      <div class="field">
+        <label for="em"><span class="en">Your email</span><span class="da">Din e-mail</span></label>
+        <input id="em" type="email" autocomplete="email">
+      </div>
+      <button class="btn" onclick="sendIt()"><span class="en">Send the three answers</span><span class="da">Send de tre svar</span></button>
+      <p class="formnote"><span class="en">This opens your own email program with the answers filled in — nothing is stored on this page. You can also write directly to [EMAIL].</span><span class="da">Dette åbner dit eget e-mailprogram med svarene udfyldt — intet gemmes på denne side. Du kan også skrive direkte til [EMAIL].</span></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap footgrid">
+    <div>
+      <strong>NextGen-Nordic</strong><br>
+      <span class="en">Copenhagen, Denmark · CVR 46561740</span><span class="da">København, Danmark · CVR 46561740</span><br>
+      [EMAIL]
+    </div>
+    <div>
+      <a href="#help"><span class="en">What we help with</span><span class="da">Det hjælper vi med</span></a> ·
+      <a href="#offer"><span class="en">The Problem Report</span><span class="da">Problemrapporten</span></a> ·
+      <a href="#work"><span class="en">Work</span><span class="da">Opgaver</span></a> ·
+      <a href="#tell-us"><span class="en">Contact</span><span class="da">Kontakt</span></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(l){
+  document.body.classList.toggle('da', l === 'da');
+  document.documentElement.lang = l;
+  document.getElementById('btn-en').setAttribute('aria-pressed', l === 'en');
+  document.getElementById('btn-da').setAttribute('aria-pressed', l === 'da');
+}
+function sendIt(){
+  var da = document.body.classList.contains('da');
+  var q = ['1. ','2. ','3. '];
+  var labels = da
+    ? ['Hvad prøver du at opnå?','Hvad sker der i stedet?','Hvad har du allerede prøvet?']
+    : ['What are you trying to achieve?','What happens instead?','What have you already tried?'];
+  var v = ['q1','q2','q3'].map(function(id){ return document.getElementById(id).value; });
+  var body = '';
+  for (var i = 0; i < 3; i++){ body += q[i] + labels[i] + '\n' + (v[i] || '—') + '\n\n'; }
+  body += (da ? 'E-mail: ' : 'Email: ') + (document.getElementById('em').value || '—');
+  var subject = da ? 'Problem fra hjemmesiden' : 'Problem from the website';
+  window.location.href = 'mailto:[EMAIL]?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+}
+</script>
+</body>
+</html>
