@@ -1,6 +1,6 @@
 # NG-N website — publishing notes
 
-Static site, hosted free on GitHub Pages, domain at Simply.com.
+Static Site, hosted free on GitHub Pages, domain at Simply.com.
 
 ## Files
 
