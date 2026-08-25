@@ -8,6 +8,7 @@
 <meta property="og:title" content="NextGen-Nordic — We work out what's actually wrong">
 <meta property="og:description" content="Stuck on something digital, administrative or creative? We find out what is actually wrong and tell you what to do next.">
 <meta property="og:type" content="website">
+<link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,9 +18,10 @@
   --paper-2:#E7E9E3;
   --ink:#16191B;
   --slate:#5B6560;
-  --teal:#0E6A5E;
-  --teal-dark:#0A544A;
-  --wash:#D9E7E2;
+  --brand:#1A3A68;
+  --brand-dark:#12294B;
+  --gold:#D8B040;
+  --wash:#DEE5EF;
   --rule:#CDD2C9;
   --display:"Bricolage Grotesque",system-ui,sans-serif;
   --body:"Source Serif 4",Georgia,serif;
@@ -45,7 +47,7 @@ h1{font-size:clamp(2.3rem,5.6vw,4.1rem)}
 h2{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:14px}
 h3{font-size:1.18rem;letter-spacing:-0.01em;line-height:1.25}
 p{margin:0 0 18px}
-a{color:var(--teal-dark)}
+a{color:var(--brand-dark)}
 
 .eyebrow{
   font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;
@@ -60,8 +62,8 @@ a{color:var(--teal-dark)}
   backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);
 }
 .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
-.mark{font-family:var(--display);font-weight:700;font-size:1.06rem;letter-spacing:-0.02em;text-decoration:none;color:var(--ink)}
-.mark span{color:var(--teal)}
+.mark{display:block;line-height:0;text-decoration:none}
+.mark img{height:30px;width:auto;display:block}
 .topbar-right{display:flex;align-items:center;gap:14px}
 .langswitch{display:flex;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:#fff}
 .langswitch button{
@@ -72,15 +74,15 @@ a{color:var(--teal-dark)}
 
 .btn{
   display:inline-block;font-family:var(--display);font-weight:700;font-size:.95rem;
-  background:var(--teal);color:#fff;text-decoration:none;padding:13px 22px;border-radius:3px;
-  border:1px solid var(--teal);cursor:pointer;transition:background .15s ease;
+  background:var(--brand);color:#fff;text-decoration:none;padding:13px 22px;border-radius:3px;
+  border:1px solid var(--brand);cursor:pointer;transition:background .15s ease;
 }
-.btn:hover{background:var(--teal-dark)}
+.btn:hover{background:var(--brand-dark)}
 .btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)}
 .btn.small{padding:9px 15px;font-size:.85rem}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
-  outline:2px solid var(--teal);outline-offset:3px;
+  outline:2px solid var(--brand);outline-offset:3px;
 }
 
 /* hero */
@@ -101,14 +103,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .tquote{font-size:1.02rem;color:var(--slate);font-style:italic}
 .tarrow{
   display:flex;align-items:center;justify-content:center;width:56px;
-  font-family:var(--mono);color:var(--teal);font-size:1.1rem;background:#fff;
+  font-family:var(--mono);color:var(--gold);font-size:1.4rem;background:#fff;
   border-left:1px solid var(--rule);
 }
 .tfield{margin-bottom:14px}
 .tfield:last-child{margin-bottom:0}
 .tfield b{
   display:block;font-family:var(--mono);font-weight:500;font-size:.68rem;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:3px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--brand-dark);margin-bottom:3px;
 }
 .tfield span{font-size:.98rem}
 .tnote{margin-top:18px;font-size:.95rem;color:var(--slate);max-width:62ch}
@@ -124,7 +126,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 /* steps */
 .steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
 .step{border-top:2px solid var(--ink);padding-top:16px}
-.step .num{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--teal-dark);display:block;margin-bottom:12px}
+.step .num{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--brand-dark);display:block;margin-bottom:12px}
 .step p{font-size:.98rem;color:var(--slate);margin:10px 0 0}
 
 /* offer */
@@ -134,7 +136,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .price small{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-top:10px;font-weight:400}
 .checklist{list-style:none;margin:24px 0 0;padding:0}
 .checklist li{position:relative;padding-left:26px;margin-bottom:11px;font-size:.98rem}
-.checklist li::before{content:"—";position:absolute;left:0;color:var(--teal);font-family:var(--mono)}
+.checklist li::before{content:"—";position:absolute;left:0;color:var(--gold);font-family:var(--mono)}
 .terms{margin-top:22px;padding-top:18px;border-top:1px solid var(--rule);font-size:.9rem;color:var(--slate)}
 
 /* cases */
@@ -142,7 +144,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .case:first-of-type{border-top:none;padding-top:0}
 .case .who{font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;color:var(--slate);line-height:1.7}
 .case dl{margin:0}
-.case dt{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:4px}
+.case dt{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-dark);margin-bottom:4px}
 .case dd{margin:0 0 16px;font-size:.99rem}
 .case dd:last-child{margin-bottom:0}
 
@@ -163,8 +165,25 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 }
 .field textarea{min-height:88px;resize:vertical}
 .formnote{font-size:.9rem;color:var(--slate);margin-top:16px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.status{margin-top:18px;padding:14px 16px;border-radius:3px;font-size:.98rem;display:none}
+.status.show{display:block}
+.status.ok{background:var(--wash);border:1px solid var(--brand);color:var(--ink)}
+.status.err{background:#F6E4E1;border:1px solid #B4442F;color:#5A1D12}
+button[disabled]{opacity:.55;cursor:not-allowed}
 
-footer{border-top:1px solid var(--rule);padding:44px 0 60px;font-size:.9rem;color:var(--slate)}
+.pay{margin-top:22px;padding-top:18px;border-top:1px solid var(--rule)}
+.paylabel{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-dark);margin-bottom:8px}
+.pay p{font-size:.95rem;margin:0 0 8px}
+.pay b{font-family:var(--mono);font-weight:500;font-size:.92rem}
+.paynote{color:var(--slate);font-size:.88rem;margin:0}
+
+footer{border-top:1px solid var(--rule);padding:44px 0 40px;font-size:.9rem;color:var(--slate)}
+.footbottom{display:flex;justify-content:space-between;align-items:center;gap:20px;
+  flex-wrap:wrap;margin-top:34px;padding-top:20px;border-top:1px solid var(--rule)}
+.totop{font-family:var(--display);font-weight:700;font-size:.88rem;color:var(--ink);text-decoration:none}
+.totop:hover{color:var(--brand)}
+.edited{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--slate)}
 .footgrid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap}
 footer a{color:var(--slate)}
 
@@ -193,7 +212,7 @@ footer a{color:var(--slate)}
 
 <header class="topbar">
   <div class="wrap">
-    <a class="mark" href="#top">NextGen<span>-</span>Nordic</a>
+    <a class="mark" href="#top" aria-label="NextGen-Nordic — front page"><img src="logo-header.png" alt="NextGen-Nordic"></a>
     <div class="topbar-right">
       <div class="langswitch" role="group" aria-label="Language">
         <button id="btn-en" aria-pressed="true" onclick="setLang('en')">EN</button>
@@ -214,8 +233,8 @@ footer a{color:var(--slate)}
       <span class="da">Noget sidder fast. Vi finder ud af, hvad der reelt er galt.</span>
     </h1>
     <p class="lead">
-      <span class="en">Two people in Copenhagen who untangle digital, administrative and creative problems — and tell you in plain language what to do next. We use AI where it helps. It is never the point.</span>
-      <span class="da">To personer i København, der løser digitale, administrative og kreative problemer — og fortæller dig i klart sprog, hvad næste skridt er. Vi bruger AI, hvor det hjælper. Det er aldrig pointen.</span>
+      <span class="en">Based in Copenhagen. We untangle digital, administrative and creative problems — and tell you in plain language what to do next. We use AI where it helps. It is never the point.</span>
+      <span class="da">Baseret i København. Vi løser digitale, administrative og kreative problemer — og fortæller dig i klart sprog, hvad næste skridt er. Vi bruger AI, hvor det hjælper. Det er aldrig pointen.</span>
     </p>
     <div class="hero-cta">
       <a class="btn" href="#tell-us"><span class="en">Describe your problem</span><span class="da">Beskriv dit problem</span></a>
@@ -263,7 +282,7 @@ footer a{color:var(--slate)}
   <div class="wrap">
     <div class="section-intro">
       <span class="eyebrow"><span class="en">What we help with</span><span class="da">Det hjælper vi med</span></span>
-      <h2><span class="en">Four kinds of stuck</span><span class="da">Fire slags fastlåste situationer</span></h2>
+      <h2><span class="en">Four kinds of stuck we have worked with so far</span><span class="da">Fire slags fastlåste situationer, vi har arbejdet med indtil nu</span></h2>
       <p class="lead"><span class="en">If your problem doesn't fit neatly into one of these, describe it anyway. Half of what we do sits between two systems that each blame the other.</span><span class="da">Passer dit problem ikke ind i en af dem, så beskriv det alligevel. Halvdelen af det, vi laver, ligger mellem to systemer, der peger på hinanden.</span></p>
     </div>
     <div class="grid four">
@@ -301,8 +320,8 @@ footer a{color:var(--slate)}
     <div class="steps">
       <div class="step">
         <span class="num">01</span>
-        <h3><span class="en">You describe it badly</span><span class="da">Du beskriver det dårligt</span></h3>
-        <p><span class="en">That is fine, and expected. Answer three questions as well as you can. Nobody describes their own problem accurately — that is the whole reason this is hard.</span><span class="da">Det er helt fint og helt forventet. Svar på tre spørgsmål, så godt du kan. Ingen beskriver deres eget problem præcist — det er netop derfor, det er svært.</span></p>
+        <h3><span class="en">You describe it roughly</span><span class="da">Du beskriver det i grove træk</span></h3>
+        <p><span class="en">Rough is exactly what we expect. Answer three questions as well as you can. Nobody describes their own problem accurately — that is the whole reason this is hard.</span><span class="da">Grove træk er præcis, hvad vi forventer. Svar på tre spørgsmål, så godt du kan. Ingen beskriver deres eget problem præcist — det er netop derfor, det er svært.</span></p>
       </div>
       <div class="step">
         <span class="num">02</span>
@@ -341,6 +360,12 @@ footer a{color:var(--slate)}
           <li><span class="en">A written brief you can send to any provider, including one that isn't us</span><span class="da">En færdig beskrivelse, du kan sende til enhver leverandør — også en, der ikke er os</span></li>
         </ul>
         <p class="terms"><span class="en">If you then ask us to fix the problem, the full 1.200 kr is deducted from that price. If we don't think we're the right people, we'll say so and tell you who is.</span><span class="da">Beder du os bagefter om at løse problemet, trækkes hele beløbet fra prisen. Er vi ikke de rette, siger vi det — og fortæller, hvem der er.</span></p>
+        <div class="pay">
+          <div class="paylabel"><span class="en">How to pay</span><span class="da">Sådan betaler du</span></div>
+          <p>MobilePay <b>+45 61 85 86 18</b></p>
+          <p><span class="en">Bank transfer</span><span class="da">Bankoverførsel</span> — <span class="en">reg.</span><span class="da">reg.</span> <b>6695</b>, <span class="en">account</span><span class="da">konto</span> <b>2003605178</b></p>
+          <p class="paynote"><span class="en">You pay once we have agreed the problem is one we can help with — never before.</span><span class="da">Du betaler, når vi er blevet enige om, at det er et problem, vi kan hjælpe med — aldrig før.</span></p>
+        </div>
       </div>
     </div>
   </div>
@@ -399,16 +424,16 @@ footer a{color:var(--slate)}
     <div class="twocol">
       <div>
         <span class="eyebrow"><span class="en">Who we are</span><span class="da">Hvem vi er</span></span>
-        <h2><span class="en">Two people, and no pretending</span><span class="da">To personer — og ingen pynt</span></h2>
-        <p><span class="en">NextGen-Nordic is [NAME 1] and [NAME 2], based in Copenhagen. We are a registered Danish company, CVR 46561740. We are also new at this, and we would rather tell you that than have you find out.</span><span class="da">NextGen-Nordic er [NAVN 1] og [NAVN 2] med base i København. Vi er et registreret dansk selskab, CVR 46561740. Vi er også nye i det her, og det siger vi hellere selv, end at du opdager det.</span></p>
-        <p><span class="en">We are not a large consultancy, we do not have a network of experts, and we are not an AI company. We are two people who are good at working out what is actually going on, and stubborn about finishing.</span><span class="da">Vi er ikke et stort konsulenthus, vi har ikke et netværk af eksperter, og vi er ikke et AI-firma. Vi er to personer, der er gode til at finde ud af, hvad der faktisk foregår — og stædige nok til at blive færdige.</span></p>
+        <h2><span class="en">Small on purpose, and no pretending</span><span class="da">Lille med vilje — og ingen pynt</span></h2>
+        <p><span class="en">NextGen-Nordic is run by Peter S. Sørensen from Copenhagen, registered in Denmark under CVR 46561740. Vinod Jha works alongside him as an independent freelance partner. We keep the setup small and the costs low on purpose — when the work justifies it, we will register as a company.</span><span class="da">NextGen-Nordic drives af Peter S. Sørensen fra København og er registreret i Danmark under CVR 46561740. Vinod Jha arbejder sammen med ham som selvstændig freelancepartner. Vi holder bevidst opsætningen lille og omkostningerne lave — når arbejdet berettiger det, registrerer vi et selskab.</span></p>
+        <p><span class="en">We are not a consultancy, we do not have a network of experts, and we are not an AI company. We are new at this and would rather say so than have you find out. What we are good at is working out what is actually going on — and being stubborn about finishing.</span><span class="da">Vi er ikke et konsulenthus, vi har ikke et netværk af eksperter, og vi er ikke et AI-firma. Vi er nye i det her, og det siger vi hellere selv, end at du opdager det. Det, vi er gode til, er at finde ud af, hvad der faktisk foregår — og at være stædige nok til at blive færdige.</span></p>
         <p><span class="en">Considering something substantial? We can put you in touch with someone we've helped before, privately and with their permission.</span><span class="da">Overvejer du noget større? Vi kan sætte dig i kontakt med en, vi har hjulpet før — privat og med vedkommendes tilladelse.</span></p>
       </div>
       <div>
         <span class="eyebrow"><span class="en">What we don't do</span><span class="da">Det gør vi ikke</span></span>
         <h2><span class="en">The limits, up front</span><span class="da">Grænserne, sagt på forhånd</span></h2>
         <ul class="plainlist">
-          <li><span class="en">We don't give legal, tax or financial advice. When you need a lawyer or an accountant, we say so.</span><span class="da">Vi giver ikke juridisk, skattemæssig eller økonomisk rådgivning. Har du brug for en advokat eller revisor, siger vi det.</span></li>
+          <li><span class="en">We don't give legal, tax, financial or investment advice. When you need a lawyer, an accountant or an adviser, we say so.</span><span class="da">Vi giver ikke juridisk, skattemæssig, økonomisk eller investeringsmæssig rådgivning. Har du brug for en advokat, en revisor eller en rådgiver, siger vi det.</span></li>
           <li><span class="en">We don't ask for your bank logins or NemID/MitID, ever.</span><span class="da">Vi beder aldrig om dine bankoplysninger eller MitID.</span></li>
           <li><span class="en">We don't take on work we don't believe we can finish. We'd rather turn it down.</span><span class="da">Vi tager ikke opgaver, vi ikke tror, vi kan gøre færdige. Så siger vi hellere nej.</span></li>
           <li><span class="en">We don't keep your documents longer than the job needs. Ask, and we delete them.</span><span class="da">Vi gemmer ikke dine dokumenter længere, end opgaven kræver. Sig til, og vi sletter dem.</span></li>
@@ -427,29 +452,38 @@ footer a{color:var(--slate)}
       <h2><span class="en">Three questions. Rough answers are fine.</span><span class="da">Tre spørgsmål. Grove svar er fint.</span></h2>
       <p class="lead"><span class="en">You don't need the right words. That's our job. We reply within one working day and tell you honestly whether we can help.</span><span class="da">Du behøver ikke de rigtige ord. Det er vores job. Vi svarer inden for én hverdag og siger ærligt, om vi kan hjælpe.</span></p>
     </div>
-    <div class="form">
+    <form class="form" id="ngn-form" novalidate>
+      <input type="hidden" name="access_key" value="dc822433-8b5e-499f-b3f5-4c46317ae2f5">
+      <input type="hidden" name="subject" value="New problem from nextgen-nordic.dk">
+      <input type="hidden" name="from_name" value="NextGen-Nordic website">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+
       <div class="field">
         <label for="q1"><span class="en">1. What are you trying to achieve?</span><span class="da">1. Hvad prøver du at opnå?</span></label>
         <div class="hint"><span class="en">The thing you actually want to end up with.</span><span class="da">Det, du reelt gerne vil ende med.</span></div>
-        <textarea id="q1"></textarea>
+        <textarea id="q1" name="What are you trying to achieve" required></textarea>
       </div>
       <div class="field">
         <label for="q2"><span class="en">2. What happens instead?</span><span class="da">2. Hvad sker der i stedet?</span></label>
         <div class="hint"><span class="en">Error messages, refusals, silence — whatever you see.</span><span class="da">Fejlbeskeder, afvisninger, tavshed — hvad du end oplever.</span></div>
-        <textarea id="q2"></textarea>
+        <textarea id="q2" name="What happens instead" required></textarea>
       </div>
       <div class="field">
         <label for="q3"><span class="en">3. What have you already tried?</span><span class="da">3. Hvad har du allerede prøvet?</span></label>
         <div class="hint"><span class="en">So we don't send you round the same loop again.</span><span class="da">Så vi ikke sender dig gennem den samme runde igen.</span></div>
-        <textarea id="q3"></textarea>
+        <textarea id="q3" name="What have you already tried" required></textarea>
       </div>
       <div class="field">
         <label for="em"><span class="en">Your email</span><span class="da">Din e-mail</span></label>
-        <input id="em" type="email" autocomplete="email">
+        <input id="em" name="email" type="email" autocomplete="email" required>
       </div>
-      <button class="btn" onclick="sendIt()"><span class="en">Send the three answers</span><span class="da">Send de tre svar</span></button>
-      <p class="formnote"><span class="en">This opens your own email program with the answers filled in — nothing is stored on this page. You can also write directly to [EMAIL].</span><span class="da">Dette åbner dit eget e-mailprogram med svarene udfyldt — intet gemmes på denne side. Du kan også skrive direkte til [EMAIL].</span></p>
-    </div>
+
+      <button class="btn" type="submit" id="sendbtn"><span class="en">Send the three answers</span><span class="da">Send de tre svar</span></button>
+
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+
+      <p class="formnote"><span class="en">Your answers are sent to us by email through Web3Forms, a form service that forwards the message and does not keep a copy. We use what you write only to answer you. You can also write directly to nextgen.nordic@gmail.com.</span><span class="da">Dine svar sendes til os på e-mail via Web3Forms, en formulartjeneste, der videresender beskeden uden at gemme en kopi. Vi bruger det, du skriver, udelukkende til at svare dig. Du kan også skrive direkte til nextgen.nordic@gmail.com.</span></p>
+    </form>
   </div>
 </section>
 
@@ -460,13 +494,19 @@ footer a{color:var(--slate)}
     <div>
       <strong>NextGen-Nordic</strong><br>
       <span class="en">Copenhagen, Denmark · CVR 46561740</span><span class="da">København, Danmark · CVR 46561740</span><br>
-      [EMAIL]
+      nextgen.nordic@gmail.com
     </div>
     <div>
       <a href="#help"><span class="en">What we help with</span><span class="da">Det hjælper vi med</span></a> ·
       <a href="#offer"><span class="en">The Problem Report</span><span class="da">Problemrapporten</span></a> ·
       <a href="#work"><span class="en">Work</span><span class="da">Opgaver</span></a> ·
       <a href="#tell-us"><span class="en">Contact</span><span class="da">Kontakt</span></a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="footbottom">
+      <a class="totop" href="#top">↑ <span class="en">Back to top</span><span class="da">Til toppen</span></a>
+      <span class="edited"><span class="en">Last edited 25-08-2026</span><span class="da">Sidst redigeret 25-08-2026</span></span>
     </div>
   </div>
 </footer>
@@ -478,19 +518,49 @@ function setLang(l){
   document.getElementById('btn-en').setAttribute('aria-pressed', l === 'en');
   document.getElementById('btn-da').setAttribute('aria-pressed', l === 'da');
 }
-function sendIt(){
+document.getElementById('ngn-form').addEventListener('submit', async function(e){
+  e.preventDefault();
   var da = document.body.classList.contains('da');
-  var q = ['1. ','2. ','3. '];
-  var labels = da
-    ? ['Hvad prøver du at opnå?','Hvad sker der i stedet?','Hvad har du allerede prøvet?']
-    : ['What are you trying to achieve?','What happens instead?','What have you already tried?'];
-  var v = ['q1','q2','q3'].map(function(id){ return document.getElementById(id).value; });
-  var body = '';
-  for (var i = 0; i < 3; i++){ body += q[i] + labels[i] + '\n' + (v[i] || '—') + '\n\n'; }
-  body += (da ? 'E-mail: ' : 'Email: ') + (document.getElementById('em').value || '—');
-  var subject = da ? 'Problem fra hjemmesiden' : 'Problem from the website';
-  window.location.href = 'mailto:[EMAIL]?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-}
+  var form = e.target;
+  var btn = document.getElementById('sendbtn');
+  var box = document.getElementById('status');
+
+  if (!form.checkValidity()){
+    box.className = 'status err show';
+    box.textContent = da
+      ? 'Udfyld venligst alle fire felter — grove svar er fint.'
+      : 'Please fill in all four fields — rough answers are fine.';
+    return;
+  }
+
+  btn.disabled = true;
+  box.className = 'status show';
+  box.textContent = da ? 'Sender …' : 'Sending …';
+
+  try {
+    var res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+    });
+    var data = await res.json();
+    if (data.success){
+      box.className = 'status ok show';
+      box.textContent = da
+        ? 'Tak — vi har modtaget dit problem. Vi svarer inden for én hverdag.'
+        : 'Thank you — we have your problem. We will reply within one working day.';
+      form.reset();
+    } else {
+      throw new Error(data.message || 'failed');
+    }
+  } catch (err){
+    box.className = 'status err show';
+    box.textContent = da
+      ? 'Det gik galt. Skriv venligst direkte til nextgen.nordic@gmail.com.'
+      : 'Something went wrong. Please write directly to nextgen.nordic@gmail.com.';
+    btn.disabled = false;
+  }
+});
 </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 # NG-N website — publishing notes
 
-Static Site, hosted free on GitHub Pages, domain at Simply.com.
+Static site, hosted free on GitHub Pages, domain at Simply.com.
 
 ## Files
 
@@ -11,15 +11,13 @@ Static Site, hosted free on GitHub Pages, domain at Simply.com.
 | `404.html` | Shown when a URL doesn't exist. |
 | `robots.txt` | Lets search engines index the site. |
 | `sitemap.xml` | Lists the pages for search engines. Update `lastmod` when the site changes. |
+| `logo-header.png` | Logo used in the page header. |
+| `logo.png` | Full-size logo, also used as the favicon. |
 
-## Before publishing — fill these in
+## Before publishing — the one thing left
 
-Search `index.html` for these and replace every occurrence:
-
-- `[NAME 1]` and `[NAME 2]` — the two founders' names
-- `[EMAIL]` — appears 3 times (form note, footer, mailto link)
-
-Also confirm: the price `1.200 kr`, and that the three cases are factually accurate.
+Search `index.html` for `YOUR_ACCESS_KEY_HERE` and replace it with the Web3Forms
+access key (see "Contact form" below). Until that is done, the form will not send.
 
 ## Publish (once)
 
@@ -53,13 +51,33 @@ Optional IPv6 (add alongside the A records, do not replace them):
 
 DNS changes can take up to 24 hours.
 
+## Also worth doing
+
+- Update the "Last edited" date in the footer when the page changes.
+
 ## Updating the site later
 
 Edit `index.html` in the repo (GitHub's web editor is fine) and commit.
 The live site updates in about a minute. No rebuild, no deploy step.
 
+## Contact form (Web3Forms)
+
+The form posts to Web3Forms, which forwards the message to nextgen.nordic@gmail.com.
+Free, unlimited, no account.
+
+1. Go to web3forms.com, enter nextgen.nordic@gmail.com, request an access key.
+2. The key arrives by email — a long string of letters and numbers.
+3. In `index.html`, find `YOUR_ACCESS_KEY_HERE` and replace it with that key.
+4. Commit. Test by submitting the form yourself.
+5. Check the spam folder for the first message and mark it as not spam.
+
+The key is visible in the page source. That is normal and by design — it only
+allows sending to the address it was registered to.
+
+Spam protection: a hidden `botcheck` field catches simple bots. If real spam
+starts arriving, add hCaptcha through the Web3Forms dashboard.
+
 ## Known limitations
 
-- The contact form opens the visitor's own email program. It stores nothing and
-  fails silently if no mail app is configured. Replace with a hosted form service later.
 - No analytics installed.
+- Danish text has not been proofread yet.
