@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NextGen-Nordic — We work out what's actually wrong</title>
-<meta name="description" content="Two people in Copenhagen who untangle digital, administrative and creative problems. We tell you plainly what is wrong and what to do next.">
-<meta property="og:title" content="NextGen-Nordic — We work out what's actually wrong">
-<meta property="og:description" content="Stuck on something digital, administrative or creative? We find out what is actually wrong and tell you what to do next.">
+<title>NextGen-Nordic — We find the next step</title>
+<meta name="description" content="We help with digital, administrative and creative situations where you've got stuck — and tell you plainly what to do next.">
+<meta property="og:title" content="NextGen-Nordic — We find the next step">
+<meta property="og:description" content="Not sure how to move forward? We help with digital, administrative and creative situations — and tell you the next step.">
 <meta property="og:type" content="website">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,10 +134,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .pricebox{border:1px solid var(--ink);background:#fff;padding:30px}
 .price{font-family:var(--display);font-weight:700;font-size:2.6rem;letter-spacing:-0.03em;line-height:1}
 .price small{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-top:10px;font-weight:400}
-.checklist{list-style:none;margin:24px 0 0;padding:0}
+.scopenote{font-size:.95rem;color:var(--slate);margin-top:16px}
+.includeslabel{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-dark);margin-top:22px;margin-bottom:0;display:block}
+.checklist{list-style:none;margin:14px 0 0;padding:0}
 .checklist li{position:relative;padding-left:26px;margin-bottom:11px;font-size:.98rem}
 .checklist li::before{content:"—";position:absolute;left:0;color:var(--gold);font-family:var(--mono)}
 .terms{margin-top:22px;padding-top:18px;border-top:1px solid var(--rule);font-size:.9rem;color:var(--slate)}
+
+/* payment section */
+.payment-section .lead{max-width:62ch}
 
 /* cases */
 .case{border-top:1px solid var(--rule);padding:28px 0;display:grid;grid-template-columns:200px 1fr;gap:32px}
@@ -171,12 +176,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .status.ok{background:var(--wash);border:1px solid var(--brand);color:var(--ink)}
 .status.err{background:#F6E4E1;border:1px solid #B4442F;color:#5A1D12}
 button[disabled]{opacity:.55;cursor:not-allowed}
-
-.pay{margin-top:22px;padding-top:18px;border-top:1px solid var(--rule)}
-.paylabel{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-dark);margin-bottom:8px}
-.pay p{font-size:.95rem;margin:0 0 8px}
-.pay b{font-family:var(--mono);font-weight:500;font-size:.92rem}
-.paynote{color:var(--slate);font-size:.88rem;margin:0}
 
 footer{border-top:1px solid var(--rule);padding:44px 0 40px;font-size:.9rem;color:var(--slate)}
 .footbottom{display:flex;justify-content:space-between;align-items:center;gap:20px;
@@ -218,7 +217,7 @@ footer a{color:var(--slate)}
         <button id="btn-en" aria-pressed="true" onclick="setLang('en')">EN</button>
         <button id="btn-da" aria-pressed="false" onclick="setLang('da')">DA</button>
       </div>
-      <a class="btn small" href="#tell-us"><span class="en">Describe your problem</span><span class="da">Beskriv dit problem</span></a>
+      <a class="btn small" href="#tell-us"><span class="en">Tell us where you're stuck</span><span class="da">Fortæl os, hvor du er gået i stå</span></a>
     </div>
   </div>
 </header>
@@ -229,22 +228,22 @@ footer a{color:var(--slate)}
 <section class="hero">
   <div class="wrap">
     <h1>
-      <span class="en">Something is stuck. We work out what's actually wrong.</span>
-      <span class="da">Noget sidder fast. Vi finder ud af, hvad der reelt er galt.</span>
+      <span class="en">Not sure how to move forward? We find the next step.</span>
+      <span class="da">Kan du ikke komme videre? Vi finder det næste skridt.</span>
     </h1>
     <p class="lead">
-      <span class="en">Based in Copenhagen. We untangle digital, administrative and creative problems — and tell you in plain language what to do next. We use AI where it helps. It is never the point.</span>
-      <span class="da">Baseret i København. Vi løser digitale, administrative og kreative problemer — og fortæller dig i klart sprog, hvad næste skridt er. Vi bruger AI, hvor det hjælper. Det er aldrig pointen.</span>
+      <span class="en">We help with digital, administrative and creative situations where you've got stuck — and explain in plain language what's standing in the way and what the sensible next step is. We use AI when it helps. It is never the point.</span>
+      <span class="da">Vi hjælper med digitale, administrative og kreative situationer, hvor du er gået i stå — og forklarer i klart sprog, hvad der står i vejen, og hvad det fornuftige næste skridt er. Vi bruger AI, når det hjælper. Det er aldrig pointen.</span>
     </p>
     <div class="hero-cta">
-      <a class="btn" href="#tell-us"><span class="en">Describe your problem</span><span class="da">Beskriv dit problem</span></a>
+      <a class="btn" href="#tell-us"><span class="en">Tell us where you're stuck</span><span class="da">Fortæl os, hvor du er gået i stå</span></a>
       <a class="btn ghost" href="#work"><span class="en">See what we've done</span><span class="da">Se hvad vi har lavet</span></a>
     </div>
 
     <!-- SIGNATURE ELEMENT -->
     <div class="transform">
       <div class="tcol">
-        <div class="tlabel"><span class="en">What people usually write</span><span class="da">Sådan bliver det oftest skrevet</span></div>
+        <div class="tlabel"><span class="en">This is enough to get started</span><span class="da">Det er nok til at komme i gang</span></div>
         <p class="tquote">
           <span class="en">“Hi. My music won't show up on the streaming services. I've tried everything. Can you help?”</span>
           <span class="da">“Hej. Min musik dukker ikke op på streamingtjenesterne. Jeg har prøvet alt. Kan I hjælpe?”</span>
@@ -252,14 +251,14 @@ footer a{color:var(--slate)}
       </div>
       <div class="tarrow" aria-hidden="true">→</div>
       <div class="tcol after">
-        <div class="tlabel"><span class="en">What we turn it into</span><span class="da">Det, vi laver det om til</span></div>
+        <div class="tlabel"><span class="en">Here's how we break it down</span><span class="da">Sådan bryder vi det ned</span></div>
         <div class="tfield">
           <b><span class="en">Goal</span><span class="da">Mål</span></b>
           <span class="en">Get 12 tracks onto Spotify and Apple Music under my own artist name.</span>
           <span class="da">Få 12 numre på Spotify og Apple Music under mit eget kunstnernavn.</span>
         </div>
         <div class="tfield">
-          <b><span class="en">What happens instead</span><span class="da">Hvad der sker i stedet</span></b>
+          <b><span class="en">What's standing in the way</span><span class="da">Hvad der står i vejen</span></b>
           <span class="en">The distributor rejects the upload. The error mentions missing rights documentation.</span>
           <span class="da">Distributøren afviser uploadet. Fejlen nævner manglende rettighedsdokumentation.</span>
         </div>
@@ -271,8 +270,8 @@ footer a{color:var(--slate)}
       </div>
     </div>
     <p class="tnote">
-      <span class="en">The second version is the thing that gets problems solved. It is also what we deliver: you can act on it yourself, or hand it to anyone who can.</span>
-      <span class="da">Version to er den, der får problemer løst. Det er også den, vi leverer: du kan handle på den selv — eller give den videre til en, der kan.</span>
+      <span class="en">Once those three things are clear, the situation becomes much easier to act on. That is the clarity we provide: what you're trying to achieve, what's standing in the way, what has already been ruled out — and what the sensible next step is. You can act on it yourself, ask us to help, or pass it on to someone else.</span>
+      <span class="da">Når de tre ting er klare, bliver situationen langt lettere at handle på. Det er den klarhed, vi leverer: hvad du prøver at opnå, hvad der står i vejen, hvad der allerede er udelukket — og hvad det fornuftige næste skridt er. Du kan handle på den selv, bede os om hjælp, eller give den videre til en anden.</span>
     </p>
   </div>
 </section>
@@ -282,8 +281,8 @@ footer a{color:var(--slate)}
   <div class="wrap">
     <div class="section-intro">
       <span class="eyebrow"><span class="en">What we help with</span><span class="da">Det hjælper vi med</span></span>
-      <h2><span class="en">Four kinds of stuck we have worked with so far</span><span class="da">Fire slags fastlåste situationer, vi har arbejdet med indtil nu</span></h2>
-      <p class="lead"><span class="en">If your problem doesn't fit neatly into one of these, describe it anyway. Half of what we do sits between two systems that each blame the other.</span><span class="da">Passer dit problem ikke ind i en af dem, så beskriv det alligevel. Halvdelen af det, vi laver, ligger mellem to systemer, der peger på hinanden.</span></p>
+      <h2><span class="en">Four kinds of situations we often help with</span><span class="da">Fire slags situationer, vi ofte hjælper med</span></h2>
+      <p class="lead"><span class="en">If your situation does not fit neatly into one of these, describe it anyway. Many of the jobs we end up working on sit between two systems that each point at the other.</span><span class="da">Passer din situation ikke ind i en af dem, så beskriv den alligevel. Mange af de opgaver, vi ender med at løse, ligger mellem to systemer, der peger på hinanden.</span></p>
     </div>
     <div class="grid four">
       <div class="cell">
@@ -302,8 +301,8 @@ footer a{color:var(--slate)}
         <div class="tools"><span class="en">Transcripts · statements · documents · long threads</span><span class="da">Transskriptioner · kontoudtog · dokumenter · lange tråde</span></div>
       </div>
       <div class="cell">
-        <h3><span class="en">Music and creative work</span><span class="da">Musik og kreativt arbejde</span></h3>
-        <p><span class="en">The chain from making something to actually publishing it, and the point where it breaks.</span><span class="da">Kæden fra at lave noget til rent faktisk at udgive det — og det sted, hvor den knækker.</span></p>
+        <h3><span class="en">Music releases and creative work</span><span class="da">Musikudgivelser og kreativt arbejde</span></h3>
+        <p><span class="en">From the finished work to the actual release — and the point where the process gets stuck.</span><span class="da">Fra det færdige værk til den faktiske udgivelse — og det sted, hvor processen går i stå.</span></p>
         <div class="tools">Suno · Spotify · TIDAL · Soundiiz · Apple Music · Denon DJ</div>
       </div>
     </div>
@@ -315,23 +314,23 @@ footer a{color:var(--slate)}
   <div class="wrap">
     <div class="section-intro">
       <span class="eyebrow"><span class="en">How it works</span><span class="da">Sådan foregår det</span></span>
-      <h2><span class="en">Three steps, and you decide after the second</span><span class="da">Tre trin — og du bestemmer efter det andet</span></h2>
+      <h2><span class="en">Three steps — after the report, the choice is yours</span><span class="da">Tre trin — efter rapporten er valget dit</span></h2>
     </div>
     <div class="steps">
       <div class="step">
         <span class="num">01</span>
-        <h3><span class="en">You describe it roughly</span><span class="da">Du beskriver det i grove træk</span></h3>
-        <p><span class="en">Rough is exactly what we expect. Answer three questions as well as you can. Nobody describes their own problem accurately — that is the whole reason this is hard.</span><span class="da">Grove træk er præcis, hvad vi forventer. Svar på tre spørgsmål, så godt du kan. Ingen beskriver deres eget problem præcist — det er netop derfor, det er svært.</span></p>
+        <h3><span class="en">You describe it in broad terms</span><span class="da">Du beskriver det i grove træk</span></h3>
+        <p><span class="en">We always start with three things: What are you trying to achieve? What's standing in the way? What have you already tried? Broad strokes are exactly what we expect. Most people cannot describe their own situation precisely from the start — and that is part of what we help with.</span><span class="da">Vi starter altid med tre ting: Hvad vil du opnå? Hvad står i vejen? Hvad har du allerede prøvet? Grove træk er præcis, hvad vi forventer. De fleste kan ikke beskrive deres egen situation præcist fra starten — og det er en del af det, vi hjælper med.</span></p>
       </div>
       <div class="step">
         <span class="num">02</span>
-        <h3><span class="en">We find out what's actually wrong</span><span class="da">Vi finder ud af, hvad der reelt er galt</span></h3>
-        <p><span class="en">We spend a fixed two hours on it. We test, read, check and rule things out. Then you get a written Problem Report.</span><span class="da">Vi bruger to faste timer på det. Vi tester, læser, tjekker og udelukker. Derefter får du en skriftlig problemrapport.</span></p>
+        <h3><span class="en">We work out what's standing in the way</span><span class="da">Vi finder ud af, hvad der står i vejen</span></h3>
+        <p><span class="en">We set aside up to two hours of analysis for the job. We test, read, check and rule things out. Then you receive a written Problem Report with our assessment and the next step we recommend.</span><span class="da">Vi afsætter op til to timers analysearbejde til opgaven. Vi tester, læser, tjekker og udelukker. Derefter får du en skriftlig problemrapport med vores vurdering og det næste skridt, vi anbefaler.</span></p>
       </div>
       <div class="step">
         <span class="num">03</span>
-        <h3><span class="en">You choose what happens next</span><span class="da">Du vælger, hvad der skal ske</span></h3>
-        <p><span class="en">Do it yourself with the report in hand, hand it to someone else, or ask us to fix it. No pressure either way.</span><span class="da">Gør det selv med rapporten i hånden, giv den videre til en anden, eller bed os om at løse det. Ingen pres nogen af vejene.</span></p>
+        <h3><span class="en">You decide what happens next</span><span class="da">Du bestemmer, hvad der skal ske</span></h3>
+        <p><span class="en">Use the report yourself, ask us to help, or pass it on to someone else. There is no obligation to continue with us.</span><span class="da">Brug rapporten selv, bed os om hjælp, eller giv den videre til en anden. Der er ingen binding til at fortsætte med os.</span></p>
       </div>
     </div>
   </div>
@@ -344,30 +343,40 @@ footer a{color:var(--slate)}
       <div>
         <span class="eyebrow"><span class="en">The starting point</span><span class="da">Udgangspunktet</span></span>
         <h2><span class="en">The Problem Report</span><span class="da">Problemrapporten</span></h2>
-        <p><span class="en">Most people don't need someone to take over. They need someone to tell them, honestly and in plain words, what is actually wrong and what the sensible next move is.</span><span class="da">De fleste har ikke brug for, at nogen overtager. De har brug for, at nogen ærligt og i klart sprog fortæller dem, hvad der reelt er galt, og hvad det fornuftige næste skridt er.</span></p>
-        <p><span class="en">That is what this is. One problem, two hours of our attention, and a written answer you can use with or without us.</span><span class="da">Det er det, den er. Ét problem, to timers opmærksomhed fra os, og et skriftligt svar, du kan bruge med eller uden os.</span></p>
+        <p><span class="en">Often, nobody needs to take over the whole problem. The first need is to understand what is actually going on, what has already been ruled out, and what the sensible next step is.</span><span class="da">Ofte er der ikke brug for at overtage hele problemet. Det første behov er at forstå, hvad der reelt foregår, hvad der allerede er udelukket, og hvad det fornuftige næste skridt er.</span></p>
+        <p><span class="en">That is what the Problem Report does. One clear goal. Up to two hours of analysis. A written answer you can use yourself, use with us, or pass on to someone else.</span><span class="da">Det er det, Problemrapporten gør. Ét klart mål. Op til to timers analyse. Et skriftligt svar, du kan bruge selv, bruge sammen med os, eller give videre til en anden.</span></p>
       </div>
       <div class="pricebox">
-        <div class="price">1.200 kr
+        <div class="price"><span class="en">DKK 1,200</span><span class="da">1.200 kr.</span>
           <small><span class="en">One problem · delivered in 3 working days</span><span class="da">Ét problem · leveret på 3 hverdage</span></small>
         </div>
+        <p class="scopenote">
+          <span class="en">By one problem, we mean one clear goal and the main obstacle standing in the way. If your request actually contains several separate problems, we will tell you before we start. We agree the scope of the job — including when the delivery period begins — before you pay.</span>
+          <span class="da">Ét problem betyder ét konkret mål og den primære blokering, der står i vejen. Hvis din henvendelse reelt består af flere separate problemer, siger vi det, før vi går i gang. Vi aftaler opgavens omfang — herunder hvornår leveringsperioden starter — inden du betaler.</span>
+        </p>
+        <span class="includeslabel"><span class="en">The Problem Report includes:</span><span class="da">Problemrapporten indeholder:</span></span>
         <ul class="checklist">
-          <li><span class="en">What is actually wrong — separated from what you thought was wrong</span><span class="da">Hvad der reelt er galt — adskilt fra det, du troede var galt</span></li>
-          <li><span class="en">What we ruled out along the way</span><span class="da">Hvad vi undervejs har udelukket</span></li>
-          <li><span class="en">The single first action we recommend</span><span class="da">Den ene første handling, vi anbefaler</span></li>
-          <li><span class="en">What that will realistically take, in time or money</span><span class="da">Hvad det realistisk kræver i tid eller penge</span></li>
+          <li><span class="en">What is actually standing in the way — separated from what you first thought the problem was</span><span class="da">Hvad der reelt står i vejen — adskilt fra det, du først troede var problemet</span></li>
+          <li><span class="en">What we investigated and ruled out along the way</span><span class="da">Hvad vi undersøgte og udelukkede undervejs</span></li>
+          <li><span class="en">The first concrete step we recommend</span><span class="da">Det første konkrete skridt, vi anbefaler</span></li>
+          <li><span class="en">Our best estimate of what the next step will require in time or money</span><span class="da">Vores bedste vurdering af, hvad det næste skridt kræver i tid eller penge</span></li>
           <li><span class="en">Who should do it — you, us, or a specific kind of specialist</span><span class="da">Hvem der bør gøre det — dig, os eller en bestemt slags specialist</span></li>
-          <li><span class="en">A written brief you can send to any provider, including one that isn't us</span><span class="da">En færdig beskrivelse, du kan sende til enhver leverandør — også en, der ikke er os</span></li>
+          <li><span class="en">A ready-to-use description you can use yourself or pass on to a provider or specialist</span><span class="da">En brugsklar beskrivelse, du selv kan bruge eller give videre til en leverandør eller specialist</span></li>
         </ul>
-        <p class="terms"><span class="en">If you then ask us to fix the problem, the full 1.200 kr is deducted from that price. If we don't think we're the right people, we'll say so and tell you who is.</span><span class="da">Beder du os bagefter om at løse problemet, trækkes hele beløbet fra prisen. Er vi ikke de rette, siger vi det — og fortæller, hvem der er.</span></p>
-        <div class="pay">
-          <div class="paylabel"><span class="en">How to pay</span><span class="da">Sådan betaler du</span></div>
-          <p>MobilePay </p>
-          <p><span class="en">Bank transfer</span><span class="da">Bankoverførsel</span></p>
-          <p class="paynote"><span class="en">You pay once we have agreed the problem is one we can help with — never before.</span><span class="da">Du betaler, når vi er blevet enige om, at det er et problem, vi kan hjælpe med — aldrig før.</span></p>
-        </div>
+        <p class="terms"><span class="en">If you then choose to ask us to help solve the problem, we deduct the full DKK 1,200 from the agreed price for the follow-on work. If we are not the right people for the next step, we will say so.</span><span class="da">Vælger du bagefter at bede os om at løse problemet, trækker vi hele beløbet på 1.200 kr. fra prisen på det videre arbejde. Er vi ikke de rette til næste skridt, siger vi det.</span></p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- HOW TO PAY -->
+<section id="payment" class="payment-section">
+  <div class="wrap">
+    <span class="eyebrow"><span class="en">How to pay</span><span class="da">Sådan betaler du</span></span>
+    <p class="lead">
+      <span class="en">You only pay once we have agreed that this is a job we can help with. Once the job is agreed, we send you the payment details. No payment until we both know what the job involves.</span>
+      <span class="da">Du betaler først, når vi er blevet enige om, at det er en opgave, vi kan hjælpe med. Når opgaven er aftalt, sender vi dig betalingsoplysningerne. Ingen betaling, før vi begge kender opgavens omfang.</span>
+    </p>
   </div>
 </section>
 
@@ -377,18 +386,18 @@ footer a{color:var(--slate)}
     <div class="section-intro">
       <span class="eyebrow"><span class="en">Work we've done</span><span class="da">Opgaver vi har løst</span></span>
       <h2><span class="en">Real jobs, paid, anonymised</span><span class="da">Rigtige, betalte opgaver — anonymiseret</span></h2>
-      <p class="lead"><span class="en">Our customers asked not to be named, which we take seriously. The problems are described exactly as they were.</span><span class="da">Vores kunder har bedt om ikke at blive nævnt ved navn, og det respekterer vi. Problemerne er beskrevet præcis som de var.</span></p>
+      <p class="lead"><span class="en">Our customers have asked not to be named, and we respect that. The jobs are anonymised, but the problem, the work and the outcome are described faithfully.</span><span class="da">Vores kunder har bedt om ikke at blive nævnt ved navn, og det respekterer vi. Opgaverne er anonymiseret, men problem, arbejde og resultat er gengivet loyalt.</span></p>
     </div>
 
     <div class="case">
       <div class="who"><span class="en">DJ · Denmark<br>Paid job</span><span class="da">DJ · Danmark<br>Betalt opgave</span></div>
       <dl>
         <dt><span class="en">Problem</span><span class="da">Problem</span></dt>
-        <dd><span class="en">A Denon DJ Prime setup would not play the music. The library lived in Spotify, and the hardware would not accept it. Neither company's support desk considered it their problem.</span><span class="da">Et Denon DJ Prime-setup ville ikke afspille musikken. Biblioteket lå i Spotify, og hardwaren ville ikke tage imod det. Ingen af de to supportafdelinger mente, det var deres problem.</span></dd>
+        <dd><span class="en">A Denon DJ Prime 4 setup would not play the music. The playlist was in Spotify, and the hardware would not accept it. Neither support team considered it their problem.</span><span class="da">Et Denon DJ Prime 4-setup ville ikke afspille musikken. Playlisten lå i Spotify, og hardwaren ville ikke tage imod den. Ingen af de to supportteams mente, det var deres problem.</span></dd>
         <dt><span class="en">What we did</span><span class="da">Hvad vi gjorde</span></dt>
-        <dd><span class="en">Established which streaming services the hardware actually supports, moved the library through Soundiiz into TIDAL, rebuilt the playlist structure, and tested the whole chain before the next booking.</span><span class="da">Fastslog hvilke streamingtjenester hardwaren reelt understøtter, flyttede biblioteket via Soundiiz til TIDAL, genopbyggede playlistestrukturen og testede hele kæden inden næste booking.</span></dd>
+        <dd><span class="en">Established which streaming services the hardware actually supports, moved the playlist through Soundiiz to TIDAL, rebuilt the playlist structure, and tested the whole chain before the next booking.</span><span class="da">Fastslog hvilke streamingtjenester hardwaren reelt understøtter, flyttede playlisten via Soundiiz til TIDAL, genopbyggede playlistestrukturen og testede hele kæden inden næste booking.</span></dd>
         <dt><span class="en">Outcome</span><span class="da">Resultat</span></dt>
-        <dd><span class="en">Working setup, and a written procedure for adding new music without repeating the migration.</span><span class="da">Et setup der virker — og en skriftlig procedure til at tilføje ny musik uden at gentage migreringen.</span></dd>
+        <dd><span class="en">A working setup — and a written procedure for adding new music without repeating the migration.</span><span class="da">Et setup, der virker — og en skriftlig procedure til at tilføje ny musik uden at gentage migreringen.</span></dd>
       </dl>
     </div>
 
@@ -396,11 +405,11 @@ footer a{color:var(--slate)}
       <div class="who"><span class="en">Musician · Denmark<br>Paid job</span><span class="da">Musiker · Danmark<br>Betalt opgave</span></div>
       <dl>
         <dt><span class="en">Problem</span><span class="da">Problem</span></dt>
-        <dd><span class="en">Tracks made with Suno needed to reach Spotify and Apple Music properly — with the right rights documentation, artist name and metadata.</span><span class="da">Numre lavet med Suno skulle på Spotify og Apple Music på ordentlig vis — med korrekt rettighedsdokumentation, kunstnernavn og metadata.</span></dd>
+        <dd><span class="en">Tracks made with Suno needed to be released properly on Spotify and other streaming services — with the correct rights documentation, artist name and metadata.</span><span class="da">Numre lavet med Suno skulle udgives ordentligt på Spotify og andre streamingtjenester — med korrekt rettighedsdokumentation, kunstnernavn og metadata.</span></dd>
         <dt><span class="en">What we did</span><span class="da">Hvad vi gjorde</span></dt>
-        <dd><span class="en">Worked out what the distributors actually require, prepared the documentation, corrected the metadata, and ran the release through end to end.</span><span class="da">Fandt ud af, hvad distributørerne reelt kræver, forberedte dokumentationen, rettede metadata og kørte udgivelsen igennem fra ende til anden.</span></dd>
+        <dd><span class="en">Worked out what the distributors actually require, prepared the documentation, corrected the metadata, and ran the release through from start to finish.</span><span class="da">Fandt ud af, hvad distributørerne reelt kræver, forberedte dokumentationen, rettede metadata og kørte udgivelsen igennem fra ende til anden.</span></dd>
         <dt><span class="en">Outcome</span><span class="da">Resultat</span></dt>
-        <dd><span class="en">Published catalogue, and a repeatable release checklist the artist now uses alone.</span><span class="da">Udgivet katalog — og en gentagelig udgivelses-tjekliste, som kunstneren nu bruger selv.</span></dd>
+        <dd><span class="en">A released album — and a repeatable release checklist the artist now uses independently.</span><span class="da">Et udgivet album — og en gentagelig udgivelses-tjekliste, som kunstneren nu bruger selvstændigt.</span></dd>
       </dl>
     </div>
 
@@ -408,11 +417,11 @@ footer a{color:var(--slate)}
       <div class="who"><span class="en">Private individual · Denmark<br>Paid job</span><span class="da">Privatperson · Danmark<br>Betalt opgave</span></div>
       <dl>
         <dt><span class="en">Problem</span><span class="da">Problem</span></dt>
-        <dd><span class="en">A case with a public authority required documentation by a deadline. It was unclear what counted as documentation, or how the answer should be worded.</span><span class="da">En sag hos en offentlig myndighed krævede dokumentation inden en frist. Det var uklart, hvad der tæller som dokumentation, og hvordan svaret skulle formuleres.</span></dd>
+        <dd><span class="en">A case with a public authority required documentation by a deadline. It was unclear what counted as documentation, and how the response should be worded.</span><span class="da">En sag hos en offentlig myndighed krævede dokumentation inden en frist. Det var uklart, hvad der tæller som dokumentation, og hvordan svaret skulle formuleres.</span></dd>
         <dt><span class="en">What we did</span><span class="da">Hvad vi gjorde</span></dt>
-        <dd><span class="en">Read the correspondence, listed exactly what was being asked for, helped gather and organise the material, and drafted a clear, factual reply.</span><span class="da">Læste korrespondancen, opstillede præcis hvad der blev bedt om, hjalp med at samle og strukturere materialet og skrev et klart, sagligt svar.</span></dd>
+        <dd><span class="en">Read the correspondence, set out exactly what was being requested, helped gather and structure the material, and drafted a clear, factual response.</span><span class="da">Læste korrespondancen, opstillede præcis hvad der blev bedt om, hjalp med at samle og strukturere materialet og skrev et klart, sagligt svar.</span></dd>
         <dt><span class="en">Outcome</span><span class="da">Resultat</span></dt>
-        <dd><span class="en">Submitted on time and complete. We did not give legal advice, and said clearly where that line was.</span><span class="da">Indsendt til tiden og fuldstændigt. Vi gav ikke juridisk rådgivning og sagde tydeligt, hvor den grænse gik.</span></dd>
+        <dd><span class="en">Submitted on time with the required documentation. We did not give legal advice and made it clear where that boundary was.</span><span class="da">Indsendt til tiden med den nødvendige dokumentation. Vi gav ikke juridisk rådgivning og gjorde det tydeligt, hvor den grænse gik.</span></dd>
       </dl>
     </div>
   </div>
@@ -424,20 +433,20 @@ footer a{color:var(--slate)}
     <div class="twocol">
       <div>
         <span class="eyebrow"><span class="en">Who we are</span><span class="da">Hvem vi er</span></span>
-        <h2><span class="en">Small on purpose, and no pretending</span><span class="da">Lille med vilje — og ingen pynt</span></h2>
-        <p><span class="en">NextGen-Nordic is run by Peter S. Sørensen from Copenhagen, registered in Denmark under CVR 46561740. Vinod Jha works alongside him as an independent freelance partner. We keep the setup small and the costs low on purpose — when the work justifies it, we will register as a company.</span><span class="da">NextGen-Nordic drives af Peter S. Sørensen fra København og er registreret i Danmark under CVR 46561740. Vinod Jha arbejder sammen med ham som selvstændig freelancepartner. Vi holder bevidst opsætningen lille og omkostningerne lave — når arbejdet berettiger det, registrerer vi et selskab.</span></p>
-        <p><span class="en">We are not a consultancy, we do not have a network of experts, and we are not an AI company. We are new at this and would rather say so than have you find out. What we are good at is working out what is actually going on — and being stubborn about finishing.</span><span class="da">Vi er ikke et konsulenthus, vi har ikke et netværk af eksperter, og vi er ikke et AI-firma. Vi er nye i det her, og det siger vi hellere selv, end at du opdager det. Det, vi er gode til, er at finde ud af, hvad der faktisk foregår — og at være stædige nok til at blive færdige.</span></p>
-        <p><span class="en">Considering something substantial? We can put you in touch with someone we've helped before, privately and with their permission.</span><span class="da">Overvejer du noget større? Vi kan sætte dig i kontakt med en, vi har hjulpet før — privat og med vedkommendes tilladelse.</span></p>
+        <h2><span class="en">Small on purpose. No pretending.</span><span class="da">Lille med vilje. Ingen pynt.</span></h2>
+        <p><span class="en">NextGen-Nordic is run by Peter S. Sørensen from Copenhagen and is registered in Denmark under CVR 46561740. Vinod Jha works alongside him as an independent freelance partner. We deliberately keep the organisation small and work directly on the jobs from start to finish.</span><span class="da">NextGen-Nordic drives af Peter S. Sørensen fra København og er registreret i Danmark under CVR 46561740. Vinod Jha arbejder sammen med ham som selvstændig freelancepartner. Vi holder bevidst organisationen lille og arbejder direkte med opgaverne fra start til slut.</span></p>
+        <p><span class="en">What we are good at is working out what is actually going on — and being stubborn enough to follow a case through to a useful answer. We do not try to force every job into the same solution. AI is one of our tools. It is not what we sell.</span><span class="da">Det, vi er gode til, er at finde ud af, hvad der faktisk foregår — og at være stædige nok til at følge en sag til et brugbart svar. Vi prøver ikke at presse enhver opgave ind i den samme løsning. AI er et værktøj i arbejdet — ikke det, vi sælger.</span></p>
+        <p><span class="en">Considering a larger job and want to speak to a previous customer first? With that customer's permission, we can arrange a confidential reference.</span><span class="da">Overvejer du en større opgave og vil tale med en tidligere kunde først? Med kundens tilladelse kan vi arrangere en fortrolig reference.</span></p>
       </div>
       <div>
         <span class="eyebrow"><span class="en">What we don't do</span><span class="da">Det gør vi ikke</span></span>
         <h2><span class="en">The limits, up front</span><span class="da">Grænserne, sagt på forhånd</span></h2>
         <ul class="plainlist">
-          <li><span class="en">We don't give legal, tax, financial or investment advice. When you need a lawyer, an accountant or an adviser, we say so.</span><span class="da">Vi giver ikke juridisk, skattemæssig, økonomisk eller investeringsmæssig rådgivning. Har du brug for en advokat, en revisor eller en rådgiver, siger vi det.</span></li>
-          <li><span class="en">We don't ask for your bank logins or NemID/MitID, ever.</span><span class="da">Vi beder aldrig om dine bankoplysninger eller MitID.</span></li>
-          <li><span class="en">We don't take on work we don't believe we can finish. We'd rather turn it down.</span><span class="da">Vi tager ikke opgaver, vi ikke tror, vi kan gøre færdige. Så siger vi hellere nej.</span></li>
-          <li><span class="en">We don't keep your documents longer than the job needs. Ask, and we delete them.</span><span class="da">Vi gemmer ikke dine dokumenter længere, end opgaven kræver. Sig til, og vi sletter dem.</span></li>
-          <li><span class="en">We use AI as a tool in our work. It does not decide anything on its own, and we check what it produces.</span><span class="da">Vi bruger AI som værktøj i arbejdet. Den beslutter ikke noget selv, og vi kontrollerer det, den producerer.</span></li>
+          <li><span class="en">We do not provide legal, tax, financial or investment advice. If you need a lawyer, an accountant or another authorised adviser, we will say so.</span><span class="da">Vi yder ikke juridisk, skattemæssig, økonomisk eller investeringsmæssig rådgivning. Har du brug for en advokat, en revisor eller en anden autoriseret rådgiver, siger vi det.</span></li>
+          <li><span class="en">We never ask for your passwords, card PINs or MitID approvals, and we do not ask for remote access to your computer through AnyDesk or similar software.</span><span class="da">Vi beder aldrig om dine adgangskoder, kort-PIN-koder eller MitID-godkendelser, og vi beder ikke om fjernadgang til din computer via AnyDesk eller lignende software.</span></li>
+          <li><span class="en">We do not take on jobs we do not believe we can finish properly. We would rather say no.</span><span class="da">Vi tager ikke opgaver, vi ikke tror, vi kan gøre ordentligt færdige. Vi siger hellere nej.</span></li>
+          <li><span class="en">We only keep the documents we need for the job, for as long as they are necessary for the work.</span><span class="da">Vi opbevarer kun de dokumenter, vi har brug for til opgaven, og kun så længe de er nødvendige for arbejdet.</span></li>
+          <li><span class="en">We use AI as a tool when it makes sense. AI does not make decisions on our behalf, and we review the material it produces before using it in a job.</span><span class="da">Vi bruger AI som værktøj, når det giver mening. AI træffer ikke beslutninger på vores vegne, og vi gennemgår det materiale, den producerer, før vi bruger det i en opgave.</span></li>
         </ul>
       </div>
     </div>
@@ -449,8 +458,8 @@ footer a{color:var(--slate)}
   <div class="wrap">
     <div class="section-intro">
       <span class="eyebrow"><span class="en">Tell us your problem</span><span class="da">Fortæl os dit problem</span></span>
-      <h2><span class="en">Three questions. Rough answers are fine.</span><span class="da">Tre spørgsmål. Grove svar er fint.</span></h2>
-      <p class="lead"><span class="en">You don't need the right words. That's our job. We reply within one working day and tell you honestly whether we can help.</span><span class="da">Du behøver ikke de rigtige ord. Det er vores job. Vi svarer inden for én hverdag og siger ærligt, om vi kan hjælpe.</span></p>
+      <h2><span class="en">Three questions. Broad answers are fine.</span><span class="da">Tre spørgsmål. Grove svar er fint.</span></h2>
+      <p class="lead"><span class="en">You do not need the right words. That's our job. We reply within one working day to tell you whether we can help and, if so, what the next step is.</span><span class="da">Du behøver ikke de rigtige ord. Det er vores job. Vi svarer inden for én hverdag og fortæller dig, om vi kan hjælpe, og i så fald hvad næste skridt er.</span></p>
     </div>
     <form class="form" id="ngn-form" novalidate>
       <input type="hidden" name="access_key" value="dc822433-8b5e-499f-b3f5-4c46317ae2f5">
@@ -464,9 +473,9 @@ footer a{color:var(--slate)}
         <textarea id="q1" name="What are you trying to achieve" required></textarea>
       </div>
       <div class="field">
-        <label for="q2"><span class="en">2. What happens instead?</span><span class="da">2. Hvad sker der i stedet?</span></label>
-        <div class="hint"><span class="en">Error messages, refusals, silence — whatever you see.</span><span class="da">Fejlbeskeder, afvisninger, tavshed — hvad du end oplever.</span></div>
-        <textarea id="q2" name="What happens instead" required></textarea>
+        <label for="q2"><span class="en">2. What's standing in the way right now?</span><span class="da">2. Hvad står i vejen lige nu?</span></label>
+        <div class="hint"><span class="en">Error messages, refusals, silence, something you do not understand — whatever you are seeing.</span><span class="da">Fejlbeskeder, afvisninger, tavshed, noget du ikke forstår — hvad du end oplever.</span></div>
+        <textarea id="q2" name="What's standing in the way right now" required></textarea>
       </div>
       <div class="field">
         <label for="q3"><span class="en">3. What have you already tried?</span><span class="da">3. Hvad har du allerede prøvet?</span></label>
@@ -482,7 +491,7 @@ footer a{color:var(--slate)}
 
       <div class="status" id="status" role="status" aria-live="polite"></div>
 
-      <p class="formnote"><span class="en">Your answers are sent to us by email through Web3Forms, a form service that forwards the message and does not keep a copy. We use what you write only to answer you. You can also write directly to nextgen.nordic@gmail.com.</span><span class="da">Dine svar sendes til os på e-mail via Web3Forms, en formulartjeneste, der videresender beskeden uden at gemme en kopi. Vi bruger det, du skriver, udelukkende til at svare dig. Du kan også skrive direkte til nextgen.nordic@gmail.com.</span></p>
+      <p class="formnote"><span class="en">Your answers are sent to us through Web3Forms and forwarded to our email. We use the information to handle your enquiry. You can also email us directly at nextgen.nordic@gmail.com.</span><span class="da">Dine svar sendes via Web3Forms til vores e-mail. Vi bruger oplysningerne til at behandle din henvendelse. Du kan også skrive direkte til nextgen.nordic@gmail.com.</span></p>
     </form>
   </div>
 </section>
@@ -506,7 +515,7 @@ footer a{color:var(--slate)}
   <div class="wrap">
     <div class="footbottom">
       <a class="totop" href="#top">↑ <span class="en">Back to top</span><span class="da">Til toppen</span></a>
-      <span class="edited"><span class="en">Last edited 25-08-2026</span><span class="da">Sidst redigeret 25-08-2026</span></span>
+      <span class="edited"><span class="en">Last edited 27-08-2026</span><span class="da">Sidst redigeret 27-08-2026</span></span>
     </div>
   </div>
 </footer>
